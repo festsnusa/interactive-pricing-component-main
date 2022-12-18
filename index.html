@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive pricing component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./assets/styles/rangeslider.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Simple, traffic-based pricing</h1>
+      <p class="header__subtitle">Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+    <main class="main">
+      <div class="main__header"> 
+        <p class="main__title">100K pageviews</p>
+        <input class="slider" type="range" min="0" max="32" step="1" value="16" data-orientation="vertical">
+        <div class="main__box">
+          <p class="main__value" id="js-output">$16.00</p>
+          <p class="main__per-month">/ month</p>
+        </div>
+      </div>
+      <div class="main__toggle">
+        <div class="toggle">
+          <div class="toggle__list">
+            <div class="toggle__item"><span class="toggle__caption">Monthly Billing</span>
+              <label class="toggle__label">
+                <input class="toggle__input" type="checkbox"/>
+              </label><span class="toggle__caption">Yearly Billing</span>
+            </div>
+          </div>
+          <div class="toggle__discount"> <span>25% </span><span class="toggle__discount_invisible">discount</span></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <ul class="footer__list">
+        <li class="footer__item">Unlimited websites</li>
+        <li class="footer__item">100% data ownership</li>
+        <li class="footer__item">Email reports</li>
+      </ul><a class="footer__link" href="#!" aria-label="start trial">
+        <div class="footer__button">Start my trial</div></a>
+    </footer>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

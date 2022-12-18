@@ -1,0 +1,45 @@
+mixin toggle
+  .toggle
+    .toggle__list
+      .toggle__item
+        span.toggle__caption Monthly Billing
+        label.toggle__label
+          input.toggle__input(type="checkbox")
+        span.toggle__caption Yearly Billing
+    .toggle__discount 
+      span 25% 
+      span.toggle__discount_invisible discount
+
+mixin list(arr)
+  ul.footer__list
+    each value in arr
+      li.footer__item= value
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Interactive pricing component
+    link(rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png")
+    link(rel="stylesheet" href="./assets/styles/rangeslider.css")
+    link(rel="stylesheet" href="./assets/styles/style.css")
+  body
+    header.header
+      h1.header__title Simple, traffic-based pricing
+      p.header__subtitle Sign-up for our 30-day trial. No credit card required.
+    main.main
+      .main__header 
+        p.main__title 100K pageviews
+        input.slider(type="range" min="0" max="32" step="1" value="16" data-orientation="vertical")
+        .main__box
+          p.main__value#js-output $16.00
+          p.main__per-month / month
+      .main__toggle
+        +toggle
+    footer.footer
+      +list(["Unlimited websites", "100% data ownership", "Email reports"])
+      a.footer__link(href="#!" aria-label="start trial")
+        .footer__button Start my trial
+    script(src="./assets/js/app.js")
